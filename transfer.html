@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Transfer</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+h1 {
+ color: black;
+  font-family: verdana;
+  font-size: 40px;
+  padding-top: 40px;
+  margin-left: 30px;
+}
+
+body {
+  background-image: url("https://srirag-t.github.io/Basic-Banking-System-TSF-Task/homebg.jpg");
+  background-size: 1600px 720px;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #5DADE2;
+  border: 1px solid black;
+  color: #FFFFFF;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px;
+  width: 20%;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 8px 0;
+}
+p{
+   color: black;
+  font-family: verdana;
+  font-size: 18px;
+  margin-left: 20px;
+}
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+  h2 {
+  color: black;
+     font-family: verdana;
+}
+  h4 {
+     font-family: verdana;
+  color: black;
+}
+
+
+ #submit{
+   /* Fill the attributes and values */
+   color: #FFFFFF;
+   background-color: green;
+   padding: 5px;
+   width:10%;
+   font-weight: bold;
+   border-radius: 1px;
+  }
+  #result{
+   /* Fill the attributes and values */
+   color: #FF6347;
+   font-size: 20px;
+   
+  }
+</style>
+</head>
+<body>
+
+<h1>PAYMENT</h1>
+<hr>
+   <h2>Name: Srirag</h2>
+   <h4>Current Balance: <span id="myAccountBalance">10000</span></h4>
+<hr>
+<p>Select the user you want to transfer and the amount.</p>
+<div>
+  <form onsubmit="return display()">
+    <label for="names">USER : </label>
+    <select id="names" name="names">
+      <option value="--Select--">--Select--</option>
+      <option value="Rohan">Rohan</option>
+      <option value="Hari">Hari</option>
+      <option value="Sujith">Sujith</option>
+      <option value="Ajay">Ajay</option>
+      <option value="Shiva">Shiva</option>
+      <option value="Mosaad">Mosaad</option>
+      <option value="Praneeth">Praneeth</option>
+      <option value="Nishanth">Nishanth</option>
+      <option value="HouseOwner">House Owner</option>
+    </select>
+    <label for="amount">AMOUNT : </label>
+    <input type="text" id="amount" name="amount" placeholder="Enter your amount...">
+     <p><input type="submit" id="submit" name="submit" value="Pay Now" /></p>
+    <div id="result"></div>
+  </form>
+</div>
+  <script>
+      function display()
+    {
+      var getamount=document.getElementById("amount").value;
+     
+      var myAccountBalance = parseInt(document.getElementById("myAccountBalance").innerText) - getamount;
+      if(getamount>17000)
+      {
+      alert("Insufficient Balance.");
+      }
+      else{
+      document.getElementById("result").innerHTML="You have done transaction of amount "+getamount+" to  "+document.getElementById("names").value+" <br> Your Current Balance is   "+myAccountBalance;
+       document.getElementById("myAccountBalance").innerText = myAccountBalance;
+      }
+      return false;
+    }
+  </script>
+   <a href="https://srirag-t.github.io/Basic-Banking-System-TSF-Task/final.html" class="button">Exit</a>
+
+
+  </form>
+</div>
+</body>
+</html>
